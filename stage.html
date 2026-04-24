@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@500;600;700&family=Inter:wght@300;400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <button type="button" class="logo-avatar-button" aria-label="Zvětšit profilovou fotku" data-preview-shape="circle">
+                <img src="profilovka1.jpg" alt="Profilová fotka itsjacob" class="logo-avatar">
+            </button>
+            <a href="index.html" class="logo-name">itsjacob</a>
+            <a href="https://www.instagram.com/itsjacob.jpg/" target="_blank" rel="noreferrer" aria-label="Instagram itsjacob" class="logo-ig-link">
+                <img src="iglogo.png" alt="Instagram logo" class="logo-ig-icon">
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Domů</a></li>
+            <li><a href="galerie.html">Galerie</a></li>
+            <li><a href="odkazy.html">Odkazy</a></li>
+            <li><a href="bio.html">O mně</a></li>
+        </ul>
+        <button type="button" class="hamburger" aria-label="Otevřít menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <div class="nav-mobile-overlay" aria-hidden="true">
+        <nav class="nav-mobile-menu">
+            <ul>
+                <li><a href="index.html">Domů</a></li>
+                <li><a href="galerie.html">Galerie</a></li>
+                <li><a href="odkazy.html">Odkazy</a></li>
+                <li><a href="bio.html">O mně</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <section class="page-header">
+        <div class="content-panel">
+            <p class="eyebrow">Typ fotografie</p>
+            <h1>Stage</h1>
+            <p>Zachycuju atmosféru koncertů a momenty na pódiu.</p>
+            <p>Důležitá je pro mě energie a práce se světlem v daný chvíli.</p>
+        </div>
+    </section>
+
+    <section class="category-gallery-section">
+        <div class="category-gallery">
+            <div class="category-gallery-top">
+                <button type="button" class="category-gallery-item category-gallery-item-portrait" aria-label="Zvětšit stage fotografii 1">
+                    <img src="_dsc2198_optimized.jpg" alt="Stage fotografie 1" class="category-gallery-image" data-preview-shape="portrait">
+                </button>
+                <button type="button" class="category-gallery-item category-gallery-item-portrait" aria-label="Zvětšit stage fotografii 2">
+                    <img src="_dsc1778_optimized.jpg" alt="Stage fotografie 2" class="category-gallery-image" data-preview-shape="portrait">
+                </button>
+            </div>
+
+            <button type="button" class="category-gallery-item category-gallery-item-landscape" aria-label="Zvětšit stage fotografii 3">
+                <img src="optimized.jpg" alt="Stage fotografie 3" class="category-gallery-image" data-preview-shape="landscape">
+            </button>
+
+            <button type="button" class="category-gallery-item category-gallery-item-landscape" aria-label="Zvětšit stage fotografii 4">
+                <img src="_dsc1670_optimized.jpg" alt="Stage fotografie 4" class="category-gallery-image" data-preview-shape="landscape">
+            </button>
+
+            <button type="button" class="category-gallery-item category-gallery-item-landscape" aria-label="Zvětšit stage fotografii 5">
+                <img src="_dsc1885_optimized.jpg" alt="Stage fotografie 5" class="category-gallery-image" data-preview-shape="landscape">
+            </button>
+
+            <button type="button" class="category-gallery-item category-gallery-item-landscape" aria-label="Zvětšit stage fotografii 6">
+                <img src="_dsc1955_optimized.jpg" alt="Stage fotografie 6" class="category-gallery-image" data-preview-shape="landscape">
+            </button>
+
+            <button type="button" class="category-gallery-item category-gallery-item-landscape" aria-label="Zvětšit stage fotografii 7">
+                <img src="_dsc2126-2_optimized.jpg" alt="Stage fotografie 7" class="category-gallery-image" data-preview-shape="landscape">
+            </button>
+
+            <button type="button" class="category-gallery-item category-gallery-item-landscape" aria-label="Zvětšit stage fotografii 8">
+                <img src="_dsc2154_optimized.jpg" alt="Stage fotografie 8" class="category-gallery-image" data-preview-shape="landscape">
+            </button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 - Stage</p>
+    </footer>
+
+    <div class="profile-preview" aria-hidden="true">
+        <button type="button" class="profile-preview-backdrop" aria-label="Zavřít náhled profilové fotky"></button>
+        <div class="profile-preview-dialog" role="dialog" aria-modal="true" aria-label="Náhled profilové fotky">
+            <img src="profilovka1.jpg" alt="Zvětšená profilová fotka itsjacob" class="profile-preview-image">
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

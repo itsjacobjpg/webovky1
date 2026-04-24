@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moje portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@500;600;700&family=Inter:wght@300;400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <button type="button" class="logo-avatar-button" aria-label="Zvětšit profilovou fotku" data-preview-shape="circle">
+                <img src="profilovka1.jpg" alt="Profilová fotka itsjacob" class="logo-avatar">
+            </button>
+            <a href="index.html" class="logo-name">itsjacob</a>
+            <a href="https://www.instagram.com/itsjacob.jpg/" target="_blank" rel="noreferrer" aria-label="Instagram itsjacob" class="logo-ig-link">
+                <img src="iglogo.png" alt="Instagram logo" class="logo-ig-icon">
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Domů</a></li>
+            <li><a href="galerie.html">Galerie</a></li>
+            <li><a href="odkazy.html">Odkazy</a></li>
+            <li><a href="bio.html">O mně</a></li>
+        </ul>
+        <button type="button" class="hamburger" aria-label="Otevřít menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <div class="nav-mobile-overlay" aria-hidden="true">
+        <nav class="nav-mobile-menu">
+            <ul>
+                <li><a href="index.html">Domů</a></li>
+                <li><a href="galerie.html">Galerie</a></li>
+                <li><a href="odkazy.html">Odkazy</a></li>
+                <li><a href="bio.html">O mně</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <header class="hero hero-home">
+        <div class="hero-content">
+            <p class="eyebrow">Jakub Vaněk</p>
+            <h1>Portfolio</h1>
+            <p>Každá fotka je jen zlomek vteřiny, který se už nikdy nebude opakovat...</p>
+            <a href="galerie.html" class="btn">Zobrazit galerii</a>
+        </div>
+    </header>
+
+    <section class="intro-section">
+        <div class="content-panel">
+            <h2>Doplňující informace k provozu mého webu</h2>
+            <p>
+                Tohle je úvodní stránka portfolia. Při otevření webu se nejdřív zobrazí moje
+                fotka na pozadí, porfoliové fotografie s doplňujícími informacemi jsou na dalších částech webu.
+                <br><br>
+                itsjacob
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 - Moje portfolio</p>
+    </footer>
+
+    <div class="profile-preview" aria-hidden="true">
+        <button type="button" class="profile-preview-backdrop" aria-label="Zavřít náhled profilové fotky"></button>
+        <div class="profile-preview-dialog" role="dialog" aria-modal="true" aria-label="Náhled profilové fotky">
+            <img src="profilovka1.jpg" alt="Zvětšená profilová fotka itsjacob" class="profile-preview-image">
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1017 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: #fff;
+    line-height: 1.6;
+    min-height: 100vh;
+    background:
+        linear-gradient(rgba(8, 8, 8, 0.62), rgba(8, 8, 8, 0.84)),
+        url("fotoscigem.jpg") center/cover fixed no-repeat;
+}
+
+h1, h2 {
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1px;
+}
+
+a {
+    color: inherit;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 40px;
+    background: rgba(0, 0, 0, 0.72);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.05rem;
+    letter-spacing: 0.22rem;
+}
+
+.logo-avatar-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+.logo-avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+}
+
+.logo-avatar-button:hover .logo-avatar {
+    transform: scale(1.06);
+}
+
+.logo-avatar-button:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.8);
+    outline-offset: 4px;
+    border-radius: 50%;
+}
+
+.logo-avatar,
+.profile-preview-image {
+    transition: transform 0.25s ease;
+}
+
+.logo a,
+.logo-name {
+    font-family: 'Instrument Sans', 'Inter', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: -0.02rem;
+    text-transform: none;
+}
+
+.logo a {
+    text-decoration: none;
+}
+
+.logo-name {
+    text-decoration: none;
+}
+
+.logo-name:hover {
+    opacity: 0.75;
+}
+
+.logo-ig-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    background: #000;
+}
+
+.logo-ig-icon {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+    display: block;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 28px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-size: 0.88rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18rem;
+}
+
+.nav-links a:hover {
+    opacity: 0.75;
+}
+
+.hero {
+    min-height: calc(100vh - 82px);
+    display: grid;
+    place-items: center;
+    padding: 48px 24px 72px;
+}
+
+.hero-home {
+    text-align: center;
+}
+
+.hero-content {
+    width: min(760px, 100%);
+    padding: 42px 28px;
+}
+
+.eyebrow {
+    margin-bottom: 14px;
+    font-size: 0.82rem;
+    letter-spacing: 0.28rem;
+    text-transform: uppercase;
+    opacity: 0.82;
+}
+
+.hero-content h1,
+.page-header h1 {
+    font-size: clamp(2.9rem, 8.6vw, 5.4rem);
+    line-height: 1;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+}
+
+.hero-content p,
+.content-panel p {
+    font-size: 1rem;
+    max-width: 60ch;
+}
+
+.hero-content p {
+    margin: 0 auto 26px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 140px;
+    padding: 14px 29px;
+    border: 1px solid #fff;
+    text-decoration: none;
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16rem;
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+.btn:hover {
+    background: #fff;
+    color: #000;
+}
+
+.intro-section,
+.page-header,
+.gallery-grid {
+    padding: 32px 24px 64px;
+}
+
+.content-panel {
+    width: min(980px, 100%);
+    margin: 0 auto;
+    padding: 32px;
+    background: rgba(0, 0, 0, 0.48);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(8px);
+}
+
+.content-panel h2,
+.content-panel h1 {
+    margin-bottom: 16px;
+}
+
+.gallery-grid {
+    width: min(1100px, 100%);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.gallery-card {
+    min-height: 220px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.78)),
+        url("fotoscigem.jpg") center/cover no-repeat;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.gallery-card h2 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.category-gallery-section {
+    padding: 0 24px 72px;
+}
+
+.category-gallery {
+    width: min(980px, 100%);
+    margin: 0 auto;
+    display: grid;
+    gap: 18px;
+}
+
+.category-gallery-top {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.category-gallery-item {
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(0, 0, 0, 0.34);
+    overflow: hidden;
+    cursor: zoom-in;
+}
+
+.category-gallery-item-portrait {
+    aspect-ratio: 2 / 3;
+    min-height: 420px;
+}
+
+.category-gallery-item-landscape {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    min-height: 280px;
+}
+
+.category-gallery-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.category-gallery-item:hover .category-gallery-image {
+    transform: scale(1.04);
+    filter: brightness(1.04);
+}
+
+.gallery-tabs-section {
+    padding: 8px 24px 72px;
+}
+
+.gallery-tabs {
+    width: min(980px, 100%);
+    margin: 0 auto;
+    display: grid;
+    gap: 12px;
+}
+
+.gallery-tab {
+    display: grid;
+    grid-template-columns: 173px 1fr;
+    align-items: stretch;
+    min-height: 260px;
+    padding: 0;
+    text-decoration: none;
+    background: rgba(8, 8, 8, 0.46);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+}
+
+.gallery-tab:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.09);
+    border-color: rgba(255, 255, 255, 0.24);
+}
+
+.gallery-tab-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Instrument Sans', 'Inter', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 0.22rem;
+    opacity: 0.86;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gallery-tab-preview {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    align-self: stretch;
+    width: 173px;
+    aspect-ratio: 2 / 3;
+    min-height: 260px;
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.03)),
+        rgba(255, 255, 255, 0.04);
+    cursor: pointer;
+}
+
+.gallery-tab-image {
+    width: 108%;
+    height: 108%;
+    object-fit: cover;
+    display: block;
+    transform: scale(1);
+    transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.gallery-tab-image,
+.gallery-tab-preview {
+    cursor: pointer;
+}
+
+.gallery-tab:hover .gallery-tab-image {
+    transform: scale(1.05);
+    filter: brightness(1.05);
+}
+
+.gallery-tab-label {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 32px;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4.6vw, 3.25rem);
+    text-transform: uppercase;
+    letter-spacing: 0.06rem;
+}
+
+.profile-preview {
+    position: fixed;
+    inset: 0;
+    z-index: 40;
+    display: grid;
+    place-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.1s ease;
+}
+
+.profile-preview.is-open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.profile-preview-backdrop {
+    position: absolute;
+    inset: 0;
+    border: 0;
+    background: rgba(0, 0, 0, 0.58);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    cursor: pointer;
+}
+
+.profile-preview-dialog {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    justify-items: center;
+    padding: 18px;
+}
+
+.preview-nav-button {
+    position: absolute;
+    top: 50%;
+    width: 52px;
+    height: 52px;
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    font-family: 'Instrument Sans', 'Inter', sans-serif;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transform: translateY(-50%);
+    transition: background 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.profile-preview.has-preview-navigation .preview-nav-button {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.profile-preview-image.is-circle ~ .preview-nav-button {
+    display: none;
+}
+
+.preview-nav-button:hover {
+    background: rgba(255, 255, 255, 0.16);
+}
+
+.preview-nav-button:disabled {
+    opacity: 0.32;
+    cursor: default;
+}
+
+.preview-nav-prev {
+    left: -76px;
+}
+
+.preview-nav-next {
+    right: -76px;
+}
+
+.profile-preview-image {
+    width: min(88vw, 720px);
+    aspect-ratio: 1 / 1;
+    border-radius: 0;
+    object-fit: cover;
+    border: 3px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 22px 60px rgba(0, 0, 0, 0.45);
+    cursor: zoom-out;
+}
+
+.profile-preview-image.is-circle {
+    border-radius: 50%;
+}
+
+.profile-preview-image.is-portrait {
+    width: min(64vw, 860px);
+    max-height: 92vh;
+    aspect-ratio: 2 / 3;
+    border-radius: 0;
+}
+
+.profile-preview-image.is-landscape {
+    width: min(88vw, 1200px);
+    max-height: 88vh;
+    aspect-ratio: 3 / 2;
+    border-radius: 0;
+}
+
+.bio p + p {
+    margin-top: 14px;
+}
+
+.bio .content-panel {
+    padding: 48px 40px;
+}
+
+.bio .bio-content {
+    margin-top: 32px;
+}
+
+.bio .intro-text {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    line-height: 1.5;
+    opacity: 0.95;
+    max-width: 70ch;
+}
+
+.bio .bio-moments {
+    margin-top: 48px;
+    padding-left: 0;
+    border-left: 0;
+}
+
+.bio .moment {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 12px;
+}
+
+.bio .atmosphere {
+    font-size: 1.05rem;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    opacity: 0.7;
+    max-width: 50ch;
+}
+
+.bio .bio-focus {
+    margin-top: 48px;
+}
+
+.bio .focus-text {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    font-weight: 600;
+    line-height: 1.3;
+    max-width: 60ch;
+}
+
+.bio .focus-detail {
+    font-size: 1rem;
+    font-weight: 300;
+    opacity: 0.75;
+    line-height: 1.8;
+    max-width: 55ch;
+    margin-top: 16px;
+}
+
+.bio .bio-conclusion {
+    margin-top: 64px;
+    padding-top: 48px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.bio .conclusion-text {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+}
+
+.bio .conclusion-reason {
+    font-family: 'Instrument Sans', 'Inter', sans-serif;
+    font-size: clamp(2.8rem, 6.6vw, 4.3rem);
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-top: 16px;
+    opacity: 0.95;
+}
+
+.instagram-preview-section {
+    padding: 24px 24px 64px;
+}
+
+.instagram-profile-card {
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    border-radius: 0;
+    padding: 32px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.instagram-profile-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+.instagram-header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.profile-avatar {
+    flex-shrink: 0;
+}
+
+.profile-avatar img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.25s ease, border-color 0.25s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.profile-avatar img:hover {
+    transform: scale(1.05);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.profile-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    flex: 1;
+}
+
+.stat-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 14px 12px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 0;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.stat-box:hover {
+    background: rgba(255, 255, 255, 0.07);
+    transform: translateY(-1px);
+}
+
+.stat-value {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4.5vw, 2.4rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    color: #fff;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.profile-details {
+    text-align: center;
+}
+
+.profile-handle {
+    font-size: clamp(1.4rem, 3.5vw, 1.8rem);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    margin-bottom: 8px;
+    color: #fff;
+}
+
+.profile-description {
+    font-size: 0.95rem;
+    opacity: 0.85;
+    margin-bottom: 20px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.view-profile-btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: background 0.2s ease, transform 0.1s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.view-profile-btn:hover {
+    background: #fff;
+    color: #000;
+    transform: translateY(-1px);
+}
+
+.view-profile-btn:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .instagram-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+        padding-bottom: 16px;
+    }
+    
+    .profile-avatar img {
+        width: 90px;
+        height: 90px;
+    }
+    
+    .profile-stats-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        width: 100%;
+    }
+    
+    .stat-value {
+        font-size: clamp(1.6rem, 6vw, 2.2rem);
+    }
+    
+    .instagram-profile-card {
+        padding: 24px 20px;
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 18px 24px 28px;
+    font-size: 0.82rem;
+    opacity: 0.86;
+}
+
+::selection {
+    background: #fff;
+    color: #000;
+}
+
+/* ── Hamburger tlačítko ── */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    z-index: 20;
+}
+
+.hamburger:hover {
+    opacity: 0.8;
+}
+
+.hamburger:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.85);
+    outline-offset: 4px;
+}
+
+.hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform-origin: center;
+}
+
+/* Animace X při otevření */
+.hamburger.is-open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+.hamburger.is-open span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+.hamburger.is-open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ── Mobilní vysuvné menu ── */
+.nav-mobile-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 15;
+    background: rgba(0, 0, 0, 0.18);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.24s ease;
+}
+
+.nav-mobile-overlay.is-open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.nav-mobile-menu {
+    position: absolute;
+    top: 88px;
+    right: 32px;
+    width: min(320px, calc(100vw - 32px));
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.78);
+    border-radius: 0;
+    box-shadow: 0 22px 50px rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 18px;
+    transform: translateY(-18px) scale(0.98);
+    transform-origin: top right;
+    opacity: 0;
+    transition: transform 0.24s ease, opacity 0.24s ease;
+}
+
+.nav-mobile-overlay.is-open .nav-mobile-menu {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+}
+
+.nav-mobile-menu ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.nav-mobile-menu ul li a {
+    display: block;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: 'Instrument Sans', 'Inter', sans-serif;
+    font-size: 0.94rem;
+    font-weight: 500;
+    text-transform: none;
+    letter-spacing: 0.01em;
+    color: #fff;
+    opacity: 0.92;
+    border-radius: 0;
+    transition: background 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+}
+
+.nav-mobile-menu ul li a:hover {
+    opacity: 1;
+    background: transparent;
+    transform: translateX(2px);
+}
+
+.nav-links {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    body {
+        --mobile-gutter: 16px;
+        --mobile-content-width: calc(100% - (var(--mobile-gutter) * 2));
+    }
+
+    .nav-mobile-menu {
+        top: 78px;
+        right: var(--mobile-gutter);
+        width: calc(100% - (var(--mobile-gutter) * 2));
+        max-width: 300px;
+        padding: 14px;
+        border-radius: 0;
+    }
+
+    .navbar {
+        flex-direction: row;
+        gap: 0;
+        padding: 18px var(--mobile-gutter);
+    }
+
+    .nav-links {
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        min-height: calc(100vh - 120px);
+        padding: 28px var(--mobile-gutter) 48px;
+    }
+
+    .hero-content,
+    .content-panel,
+    .gallery-grid,
+    .category-gallery,
+    .gallery-tabs,
+    .instagram-profile-card {
+        width: 100%;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .page-header,
+    .intro-section,
+    .gallery-tabs-section,
+    .category-gallery-section,
+    .instagram-preview-section {
+        display: grid;
+        justify-items: center;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .hero-content,
+    .content-panel {
+        padding: 24px 20px;
+    }
+
+    .gallery-grid,
+    footer {
+        padding-left: var(--mobile-gutter);
+        padding-right: var(--mobile-gutter);
+    }
+
+    .page-header > .content-panel,
+    .intro-section > .content-panel,
+    .instagram-preview-section > .content-panel,
+    .gallery-tabs-section > .gallery-tabs,
+    .category-gallery-section > .category-gallery {
+        width: var(--mobile-content-width);
+        max-width: var(--mobile-content-width);
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .gallery-card,
+    .gallery-tab,
+    .instagram-profile-card {
+        width: 100%;
+    }
+
+    .category-gallery-top {
+        grid-template-columns: 1fr;
+    }
+
+    .category-gallery-item-portrait {
+        aspect-ratio: 2 / 3;
+        min-height: 420px;
+    }
+
+    .category-gallery-item-landscape {
+        aspect-ratio: 3 / 2;
+        min-height: 0;
+    }
+
+    .gallery-tab {
+        grid-template-columns: 126px 1fr;
+        min-height: 190px;
+        overflow: hidden;
+    }
+
+    .gallery-tab-label {
+        padding: 0 18px;
+        justify-content: flex-start;
+        font-size: clamp(1.15rem, 5.8vw, 1.75rem);
+        line-height: 1.08;
+        overflow-wrap: anywhere;
+    }
+
+    .gallery-tab-preview {
+        width: 126px;
+        aspect-ratio: 2 / 3;
+        min-height: 190px;
+    }
+
+    .preview-nav-button {
+        width: 44px;
+        height: 44px;
+        font-size: 1.7rem;
+    }
+
+    .preview-nav-prev {
+        left: -10px;
+    }
+
+    .preview-nav-next {
+        right: -10px;
+    }
+
+    .profile-preview-dialog {
+        width: min(100%, calc(100% - (var(--mobile-gutter) * 2)));
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .page-header h1 {
+        font-size: clamp(2.2rem, 11vw, 4rem);
+        line-height: 0.95;
+        overflow-wrap: anywhere;
+    }
+
+    .page-header .eyebrow {
+        letter-spacing: 0.18rem;
+    }
+}

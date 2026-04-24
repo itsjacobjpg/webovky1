@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odkazy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@500;600;700&family=Inter:wght@300;400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <button type="button" class="logo-avatar-button" aria-label="Zvětšit profilovou fotku" data-preview-shape="circle">
+                <img src="profilovka1.jpg" alt="Profilová fotka itsjacob" class="logo-avatar">
+            </button>
+            <a href="index.html" class="logo-name">itsjacob</a>
+            <a href="https://www.instagram.com/itsjacob.jpg/" target="_blank" rel="noreferrer" aria-label="Instagram itsjacob" class="logo-ig-link">
+                <img src="iglogo.png" alt="Instagram logo" class="logo-ig-icon">
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Domů</a></li>
+            <li><a href="galerie.html">Galerie</a></li>
+            <li><a href="odkazy.html">Odkazy</a></li>
+            <li><a href="bio.html">O mně</a></li>
+        </ul>
+        <button type="button" class="hamburger" aria-label="Otevřít menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <div class="nav-mobile-overlay" aria-hidden="true">
+        <nav class="nav-mobile-menu">
+            <ul>
+                <li><a href="index.html">Domů</a></li>
+                <li><a href="galerie.html">Galerie</a></li>
+                <li><a href="odkazy.html">Odkazy</a></li>
+                <li><a href="bio.html">O mně</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <section class="page-header">
+        <div class="content-panel">
+            <p class="eyebrow">Sociální sítě</p>
+            <h1>Odkazy</h1>
+            <p>Sleduj mě na sociálních sítích.</p>
+        </div>
+    </section>
+
+    <section class="instagram-preview-section">
+        <div class="content-panel">
+            <div class="instagram-profile-card">
+                <div class="instagram-header">
+                    <div class="profile-avatar">
+                        <img src="mojeigprofilovka.jpg" alt="Instagram profile picture" id="ig-profile-pic">
+                    </div>
+                    <div class="profile-stats-grid">
+                        <div class="stat-box">
+                            <span class="stat-value" id="ig-posts">0</span>
+                            <span class="stat-label">příspěvků</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-value" id="ig-followers">0</span>
+                            <span class="stat-label">sledujících</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-details">
+                    <h3 class="profile-handle">@itsjacob.jpg</h3>
+                    <p class="profile-description">17yo, Film student in Prague</p>
+                    <a href="https://www.instagram.com/itsjacob.jpg/" target="_blank" rel="noreferrer" class="view-profile-btn">Zobrazit profil</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 - Odkazy</p>
+    </footer>
+
+    <div class="profile-preview" aria-hidden="true">
+        <button type="button" class="profile-preview-backdrop" aria-label="Zavřít náhled profilové fotky"></button>
+        <div class="profile-preview-dialog" role="dialog" aria-modal="true" aria-label="Náhled profilové fotky">
+            <img src="profilovka1.jpg" alt="Zvětšená profilová fotka itsjacob" class="profile-preview-image">
+        </div>
+    </div>
+    <script src="script.js"></script>
+    
+    <script>
+        // Instagram data structure - ready for API integration
+        const instagramData = {
+            username: '@itsjacob.jpg',
+            posts: 0,
+            followers: 0,
+            following: 0,
+            profilePic: 'https://via.placeholder.com/150/333333/ffffff?text=IG',
+            bio: '17yo, Film student in Prague'
+        };
+
+        // Mock data for immediate display
+        function loadMockData() {
+            instagramData.posts = 25;
+            instagramData.followers = 375;
+            instagramData.profilePic = 'mojeigprofilovka.jpg';
+            
+            updateInstagramDisplay();
+        }
+
+        // Update the display with current data
+        function updateInstagramDisplay() {
+            document.getElementById('ig-posts').textContent = formatNumber(instagramData.posts);
+            document.getElementById('ig-followers').textContent = formatNumber(instagramData.followers);
+            document.getElementById('ig-following').textContent = formatNumber(instagramData.following);
+            document.getElementById('ig-profile-pic').src = instagramData.profilePic;
+            
+            // Update profile info
+            document.querySelector('.profile-username').textContent = instagramData.username;
+            document.querySelector('.profile-bio').textContent = instagramData.bio;
+        }
+
+        // Format numbers with K/M suffixes
+        function formatNumber(num) {
+            if (num >= 1000000) {
+                return (num / 1000000).toFixed(1) + 'M';
+            } else if (num >= 1000) {
+                return (num / 1000).toFixed(1) + 'K';
+            }
+            return num.toString();
+        }
+
+        // Fetch real Instagram data from Node.js server
+        async function fetchInstagramData() {
+            try {
+                const response = await fetch('/api/instagram');
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    
+                    // Update with real data
+                    instagramData.posts = data.posts || instagramData.posts;
+                    instagramData.followers = data.followers || instagramData.followers;
+                    instagramData.profilePic = data.profile_pic || instagramData.profilePic;
+                    
+                    updateInstagramDisplay();
+                    console.log('Updated with real Instagram data');
+                } else {
+                    throw new Error('Server API not available');
+                }
+            } catch (error) {
+                console.log('Using mock data, server not available:', error);
+                // Keep using mock data as fallback
+            }
+        }
+
+        // Auto-refresh function (every 5 minutes)
+        function startAutoRefresh() {
+            setInterval(() => {
+                fetchInstagramData();
+            }, 5 * 60 * 1000); // 5 minutes
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            loadMockData();
+            fetchInstagramData(); // Try to fetch real data
+            startAutoRefresh();
+            startFollowerGrowth();
+        });
+
+        // Automatic follower growth every 2 days
+        function startFollowerGrowth() {
+            const lastUpdateKey = 'lastFollowerUpdate';
+            const currentFollowersKey = 'currentFollowers';
+            
+            // Load saved data
+            let lastUpdate = localStorage.getItem(lastUpdateKey);
+            let currentFollowers = parseInt(localStorage.getItem(currentFollowersKey)) || 375;
+            
+            if (!lastUpdate) {
+                // First time setup
+                localStorage.setItem(lastUpdateKey, Date.now().toString());
+                localStorage.setItem(currentFollowersKey, currentFollowers.toString());
+            } else {
+                // Calculate how many 2-day periods have passed
+                const now = Date.now();
+                const timeDiff = now - parseInt(lastUpdate);
+                const daysPassed = timeDiff / (1000 * 60 * 60 * 24);
+                const periodsPassed = Math.floor(daysPassed / 2);
+                
+                if (periodsPassed > 0) {
+                    // Add followers for each passed period
+                    currentFollowers += periodsPassed;
+                    localStorage.setItem(currentFollowersKey, currentFollowers.toString());
+                    localStorage.setItem(lastUpdateKey, now.toString());
+                    
+                    // Update display immediately
+                    instagramData.followers = currentFollowers;
+                    updateInstagramDisplay();
+                }
+            }
+            
+            // Check every hour for new followers
+            setInterval(() => {
+                const now = Date.now();
+                const lastUpdate = parseInt(localStorage.getItem(lastUpdateKey));
+                const currentFollowers = parseInt(localStorage.getItem(currentFollowersKey)) || 375;
+                
+                const daysPassed = (now - lastUpdate) / (1000 * 60 * 60 * 24);
+                const periodsPassed = Math.floor(daysPassed / 2);
+                
+                if (periodsPassed > 0) {
+                    const newFollowers = currentFollowers + periodsPassed;
+                    localStorage.setItem(currentFollowersKey, newFollowers.toString());
+                    localStorage.setItem(lastUpdateKey, now.toString());
+                    
+                    instagramData.followers = newFollowers;
+                    updateInstagramDisplay();
+                }
+            }, 60 * 60 * 1000); // Check every hour
+        }
+    </script>
+</body>
+</html>
