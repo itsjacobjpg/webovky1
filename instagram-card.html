@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Profile Card – itsjacob.jpg</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ─── Reset & Base ─────────────────────────────────────── */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #f2f2f2;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            padding: 40px 20px;
+        }
+
+        /* ─── Card Container ────────────────────────────────────── */
+        .ig-card {
+            width: min(520px, 100%);
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 28px 28px 24px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .ig-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.09);
+        }
+
+        /* ─── Horizontal Layout ─────────────────────────────────── */
+        .ig-card__inner {
+            display: flex;
+            gap: 22px;
+            align-items: flex-start;
+        }
+
+        /* ─── Avatar ────────────────────────────────────────────── */
+        .ig-card__avatar {
+            flex-shrink: 0;
+        }
+
+        .ig-card__avatar img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            /* subtle ring – Instagram-like */
+            outline: 2.5px solid #e8e8e8;
+            outline-offset: 2px;
+        }
+
+        /* ─── Right Content ─────────────────────────────────────── */
+        .ig-card__content {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            min-width: 0;
+        }
+
+        /* 1. Username */
+        .ig-card__username {
+            font-size: 21px;
+            font-weight: 700;
+            color: #111111;
+            letter-spacing: -0.3px;
+            margin-bottom: 4px;
+            line-height: 1.2;
+        }
+
+        /* 2. Full name */
+        .ig-card__name {
+            font-size: 16px;
+            font-weight: 400;
+            color: #444444;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+
+        /* 3. Stats row */
+        .ig-card__stats {
+            display: flex;
+            gap: 28px;
+            margin-bottom: 14px;
+        }
+
+        .ig-card__stat {
+            display: flex;
+            flex-direction: column;
+            gap: 1px;
+        }
+
+        .ig-card__stat-value {
+            font-size: 17px;
+            font-weight: 700;
+            color: #111111;
+            line-height: 1.2;
+        }
+
+        .ig-card__stat-label {
+            font-size: 13px;
+            font-weight: 400;
+            color: #888888;
+            line-height: 1.3;
+        }
+
+        /* 4. Meta info */
+        .ig-card__meta {
+            margin-bottom: 8px;
+        }
+
+        .ig-card__meta-role {
+            font-size: 14px;
+            color: #888888;
+            line-height: 1.5;
+        }
+
+        .ig-card__meta-age {
+            font-size: 14px;
+            font-weight: 600;
+            color: #111111;
+            line-height: 1.5;
+        }
+
+        /* 5. Bio */
+        .ig-card__bio {
+            font-size: 14px;
+            color: #222222;
+            line-height: 1.5;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .ig-card__bio-emoji {
+            font-size: 15px;
+            line-height: 1;
+            flex-shrink: 0;
+        }
+
+        /* ─── Responsive ────────────────────────────────────────── */
+        @media (max-width: 480px) {
+            .ig-card {
+                padding: 22px 18px 20px;
+            }
+
+            .ig-card__inner {
+                gap: 16px;
+            }
+
+            .ig-card__avatar img {
+                width: 82px;
+                height: 82px;
+            }
+
+            .ig-card__username {
+                font-size: 18px;
+            }
+
+            .ig-card__stats {
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         Instagram Profile Card Component
+         ═══════════════════════════════════════════════════════════ -->
+    <article class="ig-card" aria-label="Instagram profil itsjacob.jpg">
+        <div class="ig-card__inner">
+
+            <!-- Avatar -->
+            <div class="ig-card__avatar">
+                <img
+                    src="profilovka1.jpg"
+                    alt="Profilová fotka – Jakub Vaněk"
+                    loading="lazy"
+                >
+            </div>
+
+            <!-- Right content -->
+            <div class="ig-card__content">
+
+                <!-- 1. Username -->
+                <p class="ig-card__username">itsjacob.jpg</p>
+
+                <!-- 2. Full name -->
+                <p class="ig-card__name">Jakub Vaněk</p>
+
+                <!-- 3. Stats -->
+                <div class="ig-card__stats" role="list" aria-label="Statistiky profilu">
+                    <div class="ig-card__stat" role="listitem">
+                        <span class="ig-card__stat-value" data-target="24" aria-label="24 příspěvků">0</span>
+                        <span class="ig-card__stat-label">Příspěvky</span>
+                    </div>
+                    <div class="ig-card__stat" role="listitem">
+                        <span class="ig-card__stat-value" data-target="374" aria-label="374 sledujících">0</span>
+                        <span class="ig-card__stat-label">Sledující</span>
+                    </div>
+                </div>
+
+                <!-- 4. Meta info -->
+                <div class="ig-card__meta">
+                    <p class="ig-card__meta-role">Umělec</p>
+                    <p class="ig-card__meta-age">17</p>
+                </div>
+
+                <!-- 5. Bio -->
+                <p class="ig-card__bio">
+                    <span class="ig-card__bio-emoji" aria-hidden="true">🎬</span>
+                    <span>Film student in Prague</span>
+                </p>
+
+            </div>
+        </div>
+    </article>
+
+    <!-- ─── Count-up animation ──────────────────────────────────── -->
+    <script>
+        /**
+         * Animates a number from 0 to its data-target value.
+         * Uses requestAnimationFrame for smooth 60fps rendering.
+         * Duration: 1 200 ms, easeOutQuart easing.
+         */
+        function easeOutQuart(t) {
+            return 1 - Math.pow(1 - t, 4);
+        }
+
+        function animateCounter(el) {
+            const target = parseInt(el.dataset.target, 10);
+            const duration = 1200;
+            let startTime = null;
+
+            function step(timestamp) {
+                if (!startTime) startTime = timestamp;
+                const elapsed = timestamp - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const eased = easeOutQuart(progress);
+                el.textContent = Math.round(eased * target);
+
+                if (progress < 1) {
+                    requestAnimationFrame(step);
+                } else {
+                    el.textContent = target;
+                }
+            }
+
+            requestAnimationFrame(step);
+        }
+
+        /* Start counters when card enters the viewport */
+        const statValues = document.querySelectorAll('.ig-card__stat-value[data-target]');
+
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounter(entry.target);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.4 });
+
+            statValues.forEach(el => observer.observe(el));
+        } else {
+            /* Fallback: animate immediately */
+            statValues.forEach(animateCounter);
+        }
+    </script>
+
+</body>
+</html>
